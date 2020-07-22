@@ -14,8 +14,20 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a className="FAQ" href="https://octodex.github.com/faq/">
+            <a className="faq" href="https://octodex.github.com/faq/">
               FAQ
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a className="follow" href="https://twitter.com/githubdesign">
+              Follow us on Twitter
+            </a>
+          </li>
+          <li>
+            <a className="git" href="https://github.com/">
+              Back to Github.com
             </a>
           </li>
         </ul>
