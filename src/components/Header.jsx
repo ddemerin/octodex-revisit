@@ -1,13 +1,18 @@
 import React from 'react'
-// import "../Styles/Header.scss"
+import '../styles/Header.scss'
 import Logo from '../images/GitHub-Mark-64px.png'
 
 const Header = () => {
   return (
     <header>
       <nav>
-        <img src={logo} class="logo" alt="GitHub-Logo" />
         <ul className="left">
+          <img src={Logo} class="logo" alt="GitHub-Logo" />
+          <li>
+            <a className="octo" href="/">
+              Octodex
+            </a>
+          </li>
           <li>
             <a className="home" href="/">
               Home
@@ -19,7 +24,7 @@ const Header = () => {
             </a>
           </li>
         </ul>
-        <ul>
+        <ul className="right">
           <li>
             <a className="follow" href="https://twitter.com/githubdesign">
               Follow us on Twitter
@@ -35,3 +40,5 @@ const Header = () => {
     </header>
   )
 }
+
+export default Header
