@@ -34,13 +34,13 @@ const Card = () => {
                         alt={cat.alt}
                       />
                     </li>
-                    <p>
+                    <p className="description">
                       <section className="catName">
                         #{cat.number}: <span>{cat.name}</span>
                       </section>
-                      {cat.authors.map((author) => {
-                        return (
-                          <section className="authors">
+                      <section className="authors">
+                        {cat.authors.map((author) => {
+                          return (
                             <a href={author.link}>
                               <img
                                 src={author.image}
@@ -48,9 +48,9 @@ const Card = () => {
                                 alt="author"
                               />
                             </a>
-                          </section>
-                        )
-                      })}
+                          )
+                        })}
+                      </section>
                     </p>
                   </div>
                 )
