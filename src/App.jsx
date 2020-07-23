@@ -9,7 +9,7 @@ class App extends React.Component {
       <>
         <Header />
         <Card />
-        {/* <Footer /> */}
+        <Footer />
       </>
     )
   }

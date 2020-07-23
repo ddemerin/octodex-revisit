@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import '../styles/Card.scss'
 
 const Card = () => {
   const [kittehs, setKittehs] = useState([{ authors: [] }])
@@ -22,18 +23,24 @@ const Card = () => {
       <>
         <main>
           <ul>
-            <section>
+            <section className="card">
               {kittehs.map((cat) => {
                 return (
                   <div>
                     <li class="kittehs">
-                      <img src={cat.image} alt={cat.alt} />
+                      <img
+                        className="kittehImage"
+                        src={cat.image}
+                        alt={cat.alt}
+                      />
                     </li>
                     <p>
-                      {cat.number}: <span>{cat.name}</span>
-                      <section className="authors">
-                        {cat.authors.map((author) => {
-                          return (
+                      <section className="catName">
+                        #{cat.number}: <span>{cat.name}</span>
+                      </section>
+                      {cat.authors.map((author) => {
+                        return (
+                          <section className="authors">
                             <a href={author.link}>
                               <img
                                 src={author.image}
@@ -41,9 +48,9 @@ const Card = () => {
                                 alt="author"
                               />
                             </a>
-                          )
-                        })}
-                      </section>
+                          </section>
+                        )
+                      })}
                     </p>
                   </div>
                 )

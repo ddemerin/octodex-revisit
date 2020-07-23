@@ -44,7 +44,6 @@ nav {
   display: flex;
   justify-content: flex-start;
   margin: 0;
-  padding-left: 11rem;
   padding-top: 1rem;
 }
 
@@ -53,7 +52,6 @@ nav {
   justify-content: flex-end;
   margin: 0;
   padding-top: 1rem;
-  padding-right: 11rem;
 }
 
 .follow {
@@ -63,6 +61,41 @@ nav {
 
 .git {
   padding: 0;
-  //   display: none;
+  display: none;
   color: black;
+}
+
+@media (min-width: 800px) {
+  .git {
+    display: flex;
+    padding-right: 0rem;
+    padding-top: 0.05rem;
+  }
+  .right {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding-top: 1rem;
+  }
+  .logo {
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 1360px) {
+  main {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+  }
+  footer {
+    padding-left: 9.5rem;
+    padding-right: 9.5rem;
+  }
+  .git {
+    padding-right: 9rem;
+  }
+  .logo {
+    padding-left: 9rem;
+  }
 }
