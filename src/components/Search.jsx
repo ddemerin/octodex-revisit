@@ -26,6 +26,7 @@ const Search = () => {
       return kitteh.name.toLowerCase().includes(searchTerm.toLowerCase())
     })
     setResults(test)
+    console.log({ test })
   }
 
   return (
@@ -44,9 +45,7 @@ const Search = () => {
       <section className="cards-container">
         <ul className="cards">
           {results.length > 0 ? (
-            results.map((results) => {
-              return <CardResults results={results} />
-            })
+            <Card kittehs={results} />
           ) : (
             <Card kittehs={kittehs} key={kittehs.id} />
           )}
