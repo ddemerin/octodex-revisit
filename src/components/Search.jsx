@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Card from '../components/Card'
-import CardResults from '../components/CardResults'
 import axios from 'axios'
 import '../styles/Search.scss'
 
@@ -8,7 +7,12 @@ const Search = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [kittehs, setKittehs] = useState([{ authors: [] }])
   const [results, setResults] = useState([])
-  console.log(kittehs)
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      searchForKittehs()
+    }
+  }
 
   useEffect(() => {
     const loadKittehs = async () => {
@@ -26,31 +30,29 @@ const Search = () => {
       return kitteh.name.toLowerCase().includes(searchTerm.toLowerCase())
     })
     setResults(test)
-    console.log({ test })
   }
 
   return (
     <>
       <div className="search-bar-container">
-        <section className="search-bar">
+        <div className="search-bar">
           <input
             type="search"
             className="search"
             value={searchTerm}
+            onKeyDown={handleKeyDown}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-        </section>
+        </div>
         <button onClick={searchForKittehs}>Search</button>
       </div>
-      <section className="cards-container">
-        <ul className="cards">
-          {results.length > 0 ? (
-            <Card kittehs={results} />
-          ) : (
-            <Card kittehs={kittehs} key={kittehs.id} />
-          )}
-        </ul>
-      </section>
+      <div className="cards-container">
+        {results.length > 0 ? (
+          <Card kittehs={results} />
+        ) : (
+          <Card kittehs={kittehs} />
+        )}
+      </div>
     </>
   )
 }

@@ -23,7 +23,7 @@ const Card = (props) => {
                     <div>
                       #{cat.number}: <span>{cat.name}</span>
                     </div>
-                    <section className="authors">
+                    <div className="authors">
                       {cat.authors.map((author) => {
                         return (
                           <a href={author.link}>
@@ -35,7 +35,7 @@ const Card = (props) => {
                           </a>
                         )
                       })}
-                    </section>
+                    </div>
                   </div>
                 </div>
               )
