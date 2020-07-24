@@ -5,6 +5,7 @@ import '../styles/Search.scss'
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('')
+  const [loading, setLoading] = useState(false)
   const [kittehs, setKittehs] = useState([{ authors: [] }])
   const [results, setResults] = useState([])
 
@@ -21,6 +22,7 @@ const Search = () => {
         prevKittehs = resp.data.data
         return prevKittehs
       })
+      setLoading(true)
     }
     loadKittehs()
   }, [])
@@ -32,29 +34,33 @@ const Search = () => {
     setResults(test)
   }
 
-  return (
-    <>
-      <div className="search-bar-container">
-        <div className="search-bar">
-          <input
-            type="search"
-            className="search"
-            value={searchTerm}
-            onKeyDown={handleKeyDown}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+  if (loading) {
+    return (
+      <>
+        <div className="search-bar-container">
+          <div className="search-bar">
+            <input
+              type="search"
+              className="search"
+              value={searchTerm}
+              onKeyDown={handleKeyDown}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+          <button onClick={searchForKittehs}>Search</button>
         </div>
-        <button onClick={searchForKittehs}>Search</button>
-      </div>
-      <div className="cards-container">
-        {results.length > 0 ? (
-          <Card kittehs={results} />
-        ) : (
-          <Card kittehs={kittehs} />
-        )}
-      </div>
-    </>
-  )
+        <div className="cards-container">
+          {results.length > 0 ? (
+            <Card kittehs={results} />
+          ) : (
+            <Card kittehs={kittehs} />
+          )}
+        </div>
+      </>
+    )
+  } else {
+    return <p className="loading">Loading...</p>
+  }
 }
 
 export default Search
