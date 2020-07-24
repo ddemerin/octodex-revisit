@@ -7,7 +7,7 @@ const Header = () => {
     <header>
       <nav>
         <ul className="left">
-          <img src={Logo} class="logo" alt="GitHub-Logo" />
+          <img src={Logo} className="logo" alt="GitHub-Logo" />
           <li>
             <a className="octo" href="/">
               Octodex

@@ -1,30 +1,31 @@
 import React from 'react'
 import '../styles/Card.scss'
 
-const Card = (props) => {
-  const { kittehs } = props
+const CardResults = (props) => {
+  const { results } = props
+  console.log(results)
 
   return (
     <>
       <main>
         <ul>
           <section className="card">
-            {kittehs.map((cat) => {
+            {results.map((results) => {
               return (
                 <div>
-                  <li className="kittehs">
+                  <li class="kittehs">
                     <img
                       className="kittehImage"
-                      src={cat.image}
-                      alt={cat.alt}
+                      src={results.image}
+                      alt={results.alt}
                     />
                   </li>
                   <div className="description">
-                    <div>
-                      #{cat.number}: <span>{cat.name}</span>
-                    </div>
+                    <section className="resultsName">
+                      #{results.number}: <span>{results.name}</span>
+                    </section>
                     <section className="authors">
-                      {cat.authors.map((author) => {
+                      {results.authors.map((author) => {
                         return (
                           <a href={author.link}>
                             <img
@@ -47,4 +48,4 @@ const Card = (props) => {
   )
 }
 
-export default Card
+export default CardResults

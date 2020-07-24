@@ -5,22 +5,22 @@ ul {
   padding: 0;
 }
 
+.card {
+  margin: 0;
+}
+
 .kittehImage {
   height: auto;
   width: 100%;
 }
 
-li.kittehs {
+.kittehs {
   border: 0.05rem solid rgb(224, 224, 224);
   border-radius: 0.5rem;
   background-color: rgba(255, 255, 255, 0.63);
   color: #f2cf8d;
   margin: 0.25rem 1rem 1.5rem 1rem;
   padding: 0;
-}
-
-.authors {
-  display: flex;
 }
 
 span {
@@ -32,9 +32,10 @@ span {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-left: 0.5rem;
+  padding-left: 1rem;
   font-size: 0.85rem;
   color: rgb(116, 114, 114);
+  margin-bottom: 1rem;
 
   .authors {
     padding-right: 1rem;
@@ -70,6 +71,5 @@ span {
     flex-direction: column;
     flex-wrap: wrap;
     grid-template-columns: 25% 25% 25% 25%;
-    margin: 0 4rem 0 4rem;
   }
 }
